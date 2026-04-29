@@ -1,4 +1,4 @@
-public static ColaPrioridad combinacionColas(ColaPrioridad CP1, ColaPrioridad CP2) {
+public ColaPrioridad combinacionColas(ColaPrioridad CP1, ColaPrioridad CP2) {
 
     ColaPrioridad CP3 = new ColaPrioridad();
     CP3.InicializarColaPrioridad();
@@ -14,8 +14,8 @@ public static ColaPrioridad combinacionColas(ColaPrioridad CP1, ColaPrioridad CP
         p = CP1.Prioridad();
         CP1.Desacolar();
 
-        CP3.Acolar(x, p);
-        aux.Acolar(x, p);
+        CP3.AcolarPrioridad(x, p);
+        aux.AcolarPrioridad(x, p);
     }
 
 // se restaura CP1 para que “quede intacta”
@@ -24,7 +24,7 @@ public static ColaPrioridad combinacionColas(ColaPrioridad CP1, ColaPrioridad CP
         p = aux.Prioridad();
         aux.Desacolar();
 
-        CP1.Acolar(x, p);
+        CP1.AcolarPrioridad(x, p);
     }
 
 // lo mismo con CP2
@@ -33,15 +33,15 @@ public static ColaPrioridad combinacionColas(ColaPrioridad CP1, ColaPrioridad CP
         p = CP2.Prioridad();
         CP2.Desacolar();
 
-        CP3.Acolar(x, p);
-        aux.Acolar(x, p);
+        CP3.AcolarPrioridad(x, p);
+        aux.AcolarPrioridad(x, p);
     }
 
     while (!aux.ColaVacia()) {
         x = aux.Primero();
         p = aux.Prioridad();
         aux.Desacolar();
-        CP2.Acolar(x, p);
+        CP2.AcolarPrioridad(x, p);
     }
 
     return CP3;

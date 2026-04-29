@@ -60,4 +60,4 @@ public class ColaPrioridadEstatica implements ColaPrioridadTDA {
             return prioridades[0];
         }
     }
-}
+
